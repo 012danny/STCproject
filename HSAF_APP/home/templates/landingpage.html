@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+	{% if user.is_authenticated %}   <!--if the user is loged in show usr name in title --> 
+	 	        
+	<h2>Tight lines {{user.username}}!</h2>
+
+	{% else %}  			<!-- if the user is not logged in show the welcome text --> 
+	<h2>Welcome to HSAF Fishing Log</h2>
+	<p> The self proclaimed #1 app, to hlep log your fishing adventures.</p>
+
+	{% endif %}
+
+
+
+
+
+
+
+
+{% endblock %}
