@@ -24,15 +24,13 @@ class AuthUser(models.Model):
 
 
 
-# model for posts table 
-
-class Posts(models.Model):
-    post_id = models.IntegerField(primary_key=True)
+class posts(models.Model):
+    post_id = models.AutoField(primary_key=True)
     title = models.TextField()
     content = models.TextField()
     created_at = models.DateTimeField()
     updated_at = models.DateTimeField()
-    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+    userid = models.ForeignKey(AuthUser, models.DO_NOTHING, db_column='userid')
 
     class Meta:
         managed = False

@@ -1,7 +1,15 @@
 from django import forms
-from home.models import Posts
+from django.forms import ModelForm
+from home.models import posts
+from home.models import AuthUser
+
 
 class newtripform(forms.ModelForm):
+	title = forms.TextInput()
+	content = forms.TextInput()
+	userid = forms.IntegerField()
+
+
 	class Meta:
-			model = Posts
-			fields = ['title', 'content']
+			model = posts
+			fields = ['title', 'content', 'userid']

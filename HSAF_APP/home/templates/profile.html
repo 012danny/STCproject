@@ -95,9 +95,16 @@
 	      <a href="#"  aria-current="true">
 	        <div class="d-flex w-100 align-items-center justify-content-between">
 	          <strong class="mb-1">{{ Post.title }}</strong>
-	          <small>{{ Post.created_at }} </small>
+	          
+              	<div>
+      	        	<a href="/edit/{{ posts_id }}" class="btn btn-primary">Edit</a>
+      	        	<a href="/delete/{{ posts_id }}" class="btn btn-danger">Delete</a>
+            	</div>
+	          
 	        </div>
 	        <div class="col-10 mb-1 small">{{ Post.content }}</div>
+	        <small>{{ Post.created_at }}</small>
+	        
 	      </a>
 	    {% endfor%}  
 

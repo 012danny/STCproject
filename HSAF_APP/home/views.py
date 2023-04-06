@@ -2,14 +2,16 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 from home.forms import newtripform
-from home.models import Posts 
+from home.models import posts, AuthUser
+from django.contrib.sessions.models import Session
 
 
 
 #view for the users profile page
 def profile(request):
-	logs = Posts.objects.all()
+	logs = posts.objects.all()
 	return render(request,'profile.html',{'logs':logs})
 
 #sign up page view grabing pre-consturcted form/function from django lib "UsderCreationForm"
@@ -48,17 +50,16 @@ def landingpage(request):
 
 #view for the add new trip page
 def newtrip(request):
-	if request.method == "POST":
-		form = newtripform(request.POST)
-		if form.is_valid():
-			try:
+	form = newtripform(request.POST)
+	form = newtripform(initial=dict(userid=request.user.id))
+
+	if request.POST:	
+			if form.is_valid():
 				form.save()
-				return redirect('/')
-			except:
-				pass
-	else:			
-		form = newtripform()
-	return render(request,'newtrip.html', {'form': form} )
+			return redirect('/profile')
+
+	print(request.POST)  # checking POST data in terminal.
+	return render(request,'newtrip.html', {'form': form})
 
 
 
@@ -68,6 +69,22 @@ def newtrip(request):
 def mystringer(request):
     return render(request,'mystringer.html',{})
 
+
+
+#edit a post from the DB
+
+
+def edit(request):
+	return render(request,'edit.html')
+
+
+
+
+
+
+
+def delete(request):
+	return render(request,'delete.html')
 
 
 
