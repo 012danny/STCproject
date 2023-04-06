@@ -43,23 +43,21 @@ def landingpage(request):
 
 
 
-
-
-
-
-
 #view for the add new trip page
 def newtrip(request):
 	form = newtripform(request.POST)
-	form = newtripform(initial=dict(userid=request.user.id))
+	if request.method == 'POST' :		
+		if form.is_valid():
+			form.save()
+			title = form.cleaned_data.get('title')
+			content = form.cleaned_data.get('content')
+			userid = request.User.id 
+			form = newtripform(request, title=title, content=content, userid=userid)	
+			return redirect('/profile',{'form': form})
 
-	if request.POST:	
-			if form.is_valid():
-				form.save()
-			return redirect('/profile')
-
-	print(request.POST)  # checking POST data in terminal.
-	return render(request,'newtrip.html', {'form': form})
+		
+	else:
+		return render(request,'newtrip.html',{'form': form})
 
 
 

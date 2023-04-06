@@ -90,7 +90,7 @@
 	      <span class="fs-5 fw-semibold">Add New Log</span>
 	    </a>
 	    
-	    <form action="{% url 'profile'%}"  method="post" enctype="multipart/form-data" class="post-form" >
+	    <form action="{% url 'newtrip'%}"  method="POST" enctype="multipart/form-data" class="post-form" >
 	     
 	     {% csrf_token %} 
 	      <div class="mb-3">
@@ -101,8 +101,7 @@
 	      <div class="mb-3">
 	        <label for="tripNotes" class="form-label">Trip Notes</label><br>
 	        {{ form.content }}
-	        {{ form.userid }}
-
+	        
 	        
 	      </div>
 
