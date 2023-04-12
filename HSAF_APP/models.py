@@ -128,7 +128,7 @@ class Posts(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField()
     updated_at = models.DateTimeField()
-    userid = models.ForeignKey(AuthUser, models.DO_NOTHING, db_column='userid')
+    userid = models.IntegerField()
 
     class Meta:
         managed = False

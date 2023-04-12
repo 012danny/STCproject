@@ -4,9 +4,11 @@
 
 
 {% block content %}
-	{% if user.is_authenticated %}   <!--if the user is loged in show usr name in title --> 
+	{% if user.is_authenticated %}   <!--if the user is loged in redirect them to their porfile page --> 
 	 	        
-	<h2>Tight lines {{user.username}}!{{user.id}}</h2>
+	<meta http-equiv="REFRESH" content="0;url=profile/">
+
+
 
 	{% else %}  			<!-- if the user is not logged in show the welcome text --> 
 	<h2>Welcome to HSAF Fishing Log</h2>

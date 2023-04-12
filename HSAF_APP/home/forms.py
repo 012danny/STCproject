@@ -4,12 +4,9 @@ from home.models import posts
 from home.models import AuthUser
 
 
-class newtripform(forms.ModelForm):
-	title = forms.TextInput()
-	content = forms.TextInput()
-	userid = forms.IntegerField()
-
-
-	class Meta:
+class newtripform(forms.ModelForm):   # form / informaiton we will ask user for. 
+	class Meta:         
 			model = posts
-			fields = ['title', 'content', 'userid']
+			fields = ['title', 'content']
+
+	

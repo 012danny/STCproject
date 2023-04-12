@@ -1,20 +1,126 @@
+
+
 {% extends 'landingpage.html' %}
 
-{% block title %}Edit log{% endblock %}
+{% block title %}Edit Post{% endblock %}
 
 
 {% block content %}
-<div class="col-md-12">
-	<form method="POST" class="post-form" action="">
-		
+	<body>
+	       
+	  
+	<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+	 
+	  <symbol id="home" viewBox="0 0 16 16">
+	    <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/></path>
+
+	  </symbol>
 
 
-		
-	</form>
+	  <symbol id="add" viewBox="0 0 16 16">
+	    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/></path>
+	  </symbol>
+
+
+
+	  <symbol id="TPWD" viewBox="0 0 16 16">
+	      <path d="M1 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5v-1H2v-1h4v-1H4v-1h2v-1H2v-1h4V9H4V8h2V7H2V6h4V2h1v4h1V4h1v2h1V2h1v4h1V4h1v2h1V2h1v4h1V1a1 1 0 0 0-1-1H1z"/></path>
+	  </symbol>
+	  
+	    
+
+
+	  <symbol id="mystringer" viewBox="0 0 16 16">
+	    <path d="M4.5 12a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1zm3 0a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1zm3 0a.5.5 0 0 1-.5-.5v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1z"/></path>
+	     <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/></path>
+	  </symbol>
+
+	</svg>
 
 
 
 
 
 
-{% endblock content %}
+	<main class="d-flex flex-nowrap">
+
+	  <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 300px;">
+	    <a href="/profile/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+	      <span class="fs-4">{{user.username}}</span>
+	    </a>
+	    <hr>
+	    <ul class="nav nav-pills flex-column mb-auto">
+	      <li class="nav-item">
+	        <a href="/profile/" class="nav-link link-body-emphasis" aria-current="page">
+	          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+	          Home
+	        </a>
+	      </li>
+	      <li>
+	        <a href="/newtrip/" class="nav-link link-body-emphasis">
+	          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#add"></use></svg>
+	          Add New Trip
+	        </a>
+	      </li>
+	      <li>
+	        <a href="/mystringer/" class="nav-link link-body-emphasis">
+	          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#mystringer"></use></svg>
+	          My Stringer
+	        </a>
+	      </li>
+	      <li>
+	        <a href="https://tpwd.texas.gov/fishboat/fish/action/reptform2.php?water=Saltwater&lake=allSalt" class="nav-link link-body-emphasis">
+	          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#TPWD"></use></svg>
+	          TPWD Fishing Reports
+	        </a>
+	      </li>
+	    </ul>
+	    <hr>
+	  </div>
+
+
+
+
+
+	  <div class="b-example-divider b-example-vr"></div>
+
+
+
+
+	  <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="width: 990px;">
+	    
+	    <a  class="d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom">
+	      <span class="fs-5 fw-semibold">Edit Log</span>
+	    </a>
+	    
+	    <form action="/update/{{editpost.post_id}}"  method="POST" enctype="multipart/form-data" class="post-form" >
+	     
+	     {% csrf_token %} 
+
+	      <div class="mb-3">
+	        <label for="title" class="form-label">Title</label><br>
+	        <input type="text" class="form-control" name="title" id="title" value="{{editpost.title}}">
+	        
+	      </div>
+	      <div class="mb-3">
+	        <label for="content" class="form-label">Trip Notes</label><br>
+	        <input type="text" class="form-control" name="content" id="content" value="{{editpost.content}}">
+	      </div>
+
+	      <button type="submit" class="btn btn-primary">Save Edit</button>
+	    
+	    </form>
+
+	  </div>
+
+	  <div class="b-example-divider b-example-vr"></div>
+	
+	</main>
+	</body>
+
+
+
+
+
+
+{% endblock %}

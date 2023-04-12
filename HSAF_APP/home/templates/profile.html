@@ -90,15 +90,15 @@
 	      <span class="fs-5 fw-semibold">Logs</span>
 	    </a>
 	    <div class="list-group list-group-flush border-bottom scrollarea">
-	      
+	    <div class="overflow-auto" style="width: 990px; max-height: 600px">  
 	    {% for Post in logs %}
 	      <a href="#"  aria-current="true">
 	        <div class="d-flex w-100 align-items-center justify-content-between">
 	          <strong class="mb-1">{{ Post.title }}</strong>
 	          
               	<div>
-      	        	<a href="/edit/{{ posts_id }}" class="btn btn-primary">Edit</a>
-      	        	<a href="/delete/{{ posts_id }}" class="btn btn-danger">Delete</a>
+      	        	<a href="/edit/{{Post.post_id}}" class="btn btn-primary">Edit</a>
+      	        	<a href="/delete/{{Post.post_id}}" class="btn btn-danger">Delete</a>
             	</div>
 	          
 	        </div>
@@ -108,7 +108,7 @@
 	      </a>
 	    {% endfor%}  
 
-	      
+	    </div>  
 	    </div>
 
 	  </div>
